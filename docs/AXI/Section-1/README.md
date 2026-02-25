@@ -30,20 +30,18 @@
 - 5) Read data (Slave -> Master) -> we get the data which is read from memory
 
 ## Valid-ready Handshake
-- 
+- both valid and ready are synchronized with clk
+- 3 rules of valid-ready handshake mechanism are :-
+  1) Ready and valid should be independent
+  2) Ready could be asserted prior to or after valid
+  3) valid must remain high until completion of transfer or until ready becomes high
+- When both valid and ready are high, this marks the completion of the transfer
+- Valid means that master has valid data 
+- Ready means that slave is ready to accept the data from master
+
 
 ## Repository Structure
 Refer to the directory structure for RTL, UVM components, assertions, and documentation.
-
-## Project Status
-🚧 **Week 0** – Repository initialized
-🔧 RTL design and verification planning in progress
-
-## Roadmap
-- Week 1–2: AXI RTL implementation
-- Week 3–4: UVM environment development
-- Week 5: Coverage, assertions, stress testing
-- Week 6: Final cleanup and documentation
 
 ## Author
 *Shashwat Singhal*
