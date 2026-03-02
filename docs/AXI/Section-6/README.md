@@ -5,27 +5,19 @@
 - GPIO IP is used in embedded system to interact with a peripheral connected to a FPGA board.
 Here, we considered only led and switch but it also contains keypads, pushbuttons, seven segment displays, lcd, etc.
 
+- It will be a slave IP interacting with master Zinc SOC or microblaze.
+
+- Read is applicable to both led and sw, but write is applicable to only led.
+
+- Generally, for each peripheral, we have a unique offset address.
 FSM and waveform diagrams
 
-## Single beat without pipeline
-- In this configuration, when we complete all 3 phases for a current transaction, then only we start sending the data for the next transaction.
-- With pipeline means, we do not have to wait for the response of the current transaction before applying the next transaction.
-
-## Implementation of master FSM 
-- In this master, we have included one more concept of timeout where we specify that we will be waiting for 15 clock cycles before moving back to idle state.
-- We have also added one more signal which will flag to a master that we haven't received the response of a current transaction.
+## Debouncing
+- Debouncing is the unintended change in the sw value due to its mechanical structure..
+To avoid this, we need to wait for a period greater than debouncing period.
+We need to store 2 values, one at the starting and another, after debouncing period.
 
 - FSM and diagram
-
-## Implementation of Slave FSM 
-
-## Understanding different read address and data channel
-
-- We don't have independent response channel for a read operation
-- 1) Read address channel -> arvalid, arready, araddr, arsize, arburst, arlen, arid
-  2) Read data channel -> rvalid, rready, rdata, rstrb, rwid, rlast, rresp
-
-  In these signals, rready goes from master to slave. Rest other signals go from slave to master
 
   block diagram 
 
