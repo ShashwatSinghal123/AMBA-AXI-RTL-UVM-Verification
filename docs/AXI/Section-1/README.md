@@ -58,6 +58,13 @@ This section covers topics such as used cases of different AXI Interfaces, simpl
 - Ready means that slave is ready to accept the data from master
 <img width="940" height="282" alt="image" src="https://github.com/user-attachments/assets/4ae26c4c-fa83-464f-891b-2a592141705d" />
 
+-FSM diagram
+  1) Master
+     <img width="648" height="1309" alt="image" src="https://github.com/user-attachments/assets/c53f7ef2-822b-4f96-ab33-e08d293081b8" />
+  2) Slave
+     <img width="648" height="1274" alt="image" src="https://github.com/user-attachments/assets/e017520a-713b-4d3f-89f0-eba0c14ce8ef" />
+
+
 ## Author
 *Shashwat Singhal*
 
